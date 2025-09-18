@@ -236,3 +236,28 @@ function featuresActive(data) {
     )
     .join("");
 }
+
+//------------------------------------------
+
+const sectionTabs = document.querySelector(".section-tabs");
+const footer = document.querySelector("footer");
+
+window.addEventListener("scroll", () => {
+  const footerTop = footer.getBoundingClientRect().top; 
+  const windowHeight = window.innerHeight;
+
+  if (footerTop <= windowHeight) {
+    // footer ekrana girib
+    sectionTabs.style.position = "static";
+    sectionTabs.style.bottom = "auto";
+    sectionTabs.style.left = "auto";
+    sectionTabs.style.transform = "none";
+  } else {
+    // normal vəziyyət
+    sectionTabs.style.position = "fixed";
+    sectionTabs.style.bottom = "5%";
+    sectionTabs.style.left = "50%";
+    sectionTabs.style.transform =  "translate(-50%, 0)";
+  }
+});
+
