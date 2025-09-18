@@ -75,6 +75,7 @@ button {
     }
   }
   .main {
+    position: relative;
     .section-tabs {
       // width: 71rem;
       height: 6.4rem;
@@ -425,7 +426,7 @@ button {
     margin-top: 26rem;
     max-width: 118rem;
     margin-inline: auto;
-    padding-bottom: 12.6rem;
+    padding-bottom: 4.6rem;
     position: relative;
     &-top {
       @include d-flex(center, space-between, row, _);

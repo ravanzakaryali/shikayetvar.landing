@@ -248,7 +248,7 @@ window.addEventListener("scroll", () => {
   const windowHeight = window.innerHeight;
 
   if (footerTop <= windowHeight) {
-    sectionTabs.style.bottom = "3%";
+    sectionTabs.style.bottom = "22rem";
   } else {
     sectionTabs.style.position = "fixed";
     sectionTabs.style.bottom = "5%";

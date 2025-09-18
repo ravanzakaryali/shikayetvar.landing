@@ -87,6 +87,9 @@ button {
   width: 3.2rem;
   height: 3.2rem;
 }
+.container .main {
+  position: relative;
+}
 .container .main .section-tabs {
   height: 6.4rem;
   border: 1px solid #ececec;
@@ -520,7 +523,7 @@ button {
   margin-top: 26rem;
   max-width: 118rem;
   margin-inline: auto;
-  padding-bottom: 12.6rem;
+  padding-bottom: 4.6rem;
   position: relative;
 }
 .container .footer-top {
