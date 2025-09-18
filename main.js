@@ -245,7 +245,7 @@ const footer = document.querySelector("footer");
 
 window.addEventListener("scroll", () => {
   const footerTop = footer.getBoundingClientRect().top; 
-  const windowHeight = window.innerHeight;
+  const windowHeight = window.innerHeight-100;
 
   if (footerTop <= windowHeight) {
     sectionTabs.style.bottom = "22rem";

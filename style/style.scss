@@ -83,6 +83,7 @@ button {
       z-index: 3;
       background-color: rgba($color: #fff, $alpha: 0.6);
       backdrop-filter: blur(24px);
+      transition: all .7s ease-out;
       border-radius: 5.4rem;
       &-nav {
         width: 100%;
