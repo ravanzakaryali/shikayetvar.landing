@@ -179,6 +179,7 @@ prevBtn.addEventListener("click", () => {
   }
 });
 
+
 function handleInterval() {
   if (!interval) {
     interval = setInterval(() => {
