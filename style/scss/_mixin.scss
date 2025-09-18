@@ -1,0 +1,19 @@
+@mixin d-flex($align,$justify,$direction,$gap){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+@mixin d-grid($fr,$gap){
+    display: grid;
+    grid-template-columns: $fr;
+    gap: $gap;
+}
+@mixin f-style($color,$size,$weight,$lineheight){
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineheight;
+}

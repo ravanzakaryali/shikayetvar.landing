@@ -1,0 +1,683 @@
+@import "./scss/variable";
+@import "./scss/mixin";
+@font-face {
+  font-family: "Visby Regular";
+  src: url("../fonts/VisbyRegular.woff");
+}
+@font-face {
+  font-family: "Visby Demi Bold";
+  src: url("../fonts/VisbyDemiBold.woff");
+}
+@font-face {
+  font-family: "Visby Bold";
+  src: url("../fonts/VisbyBold.woff");
+}
+@font-face {
+  font-family: "Visby Light";
+  src: url("../fonts/VisbyLight.woff");
+}
+@font-face {
+  font-family: "Visby Medium";
+  src: url("../fonts/VisbyMedium.woff");
+}
+@font-face {
+  font-family: "Visby Semi Bold";
+  src: url("../fonts/VisbySemibold.woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &::-webkit-scrollbar {
+    overflow: hidden;
+  }
+}
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Visby Regular";
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  background-color: $container-bg-color;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.container {
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+  .header {
+    @include d-flex(center, center, row, 0);
+    padding-block: 2.8rem;
+    width: 100%;
+    &-logo {
+      @include d-flex(center, center, row, 0.6rem);
+      font-size: 2.6rem;
+      font-family: "Visby Bold";
+      &-img {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+  }
+  .main {
+    .section-tabs {
+      width: 71rem;
+      height: 6.4rem;
+      border: 1px solid #ececec;
+      transition: all 0.7s ease-in;
+      position: fixed;
+      z-index: 3;
+      bottom: 5%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      background-color: rgba($color: #fff, $alpha: 0.6);
+      backdrop-filter: blur(24px);
+      border-radius: 5.4rem;
+      &-nav {
+        width: 100%;
+        height: 100%;
+        &-list {
+          @include d-flex(center, space-between, row, _);
+          width: 100%;
+          height: 100%;
+          &-item {
+            padding: 1.6rem 4.4rem;
+            border-left: 1px solid #ececec;
+            &-link {
+              @include f-style(#6c6c6c, 1.6rem, 600, 3.2rem);
+              font-family: "Visby Demi Bold";
+              &:hover {
+                color: #0b0b0b;
+              }
+            }
+            &:first-child {
+              border-left: none;
+            }
+          }
+        }
+      }
+    }
+    .section-banner {
+      max-width: 118rem;
+      margin-inline: auto;
+      background-color: $banner-bg-color;
+      border-radius: 2.8rem;
+      max-height: 80vh;
+      height: 60rem;
+      margin-bottom: 10.5rem;
+      padding-top: 12.6rem;
+      padding-left: 8rem;
+      position: relative;
+      &-content {
+        @include d-flex(flex-start, flex-start, column, 2.8rem);
+        width: 45.4rem;
+        &-title {
+          @include f-style(#fff, 4.4rem, 500, 5.6rem);
+          &-strong {
+            font-family: "Visby Bold";
+            font-weight: 700;
+          }
+          &-span {
+            font-family: "Visby Medium";
+            font-weight: 500;
+          }
+        }
+        &-text {
+          @include f-style(#f8f8f8, 1.8rem, 500, 2.4rem);
+          font-family: "Visby Medium";
+        }
+        &-buttons {
+          @include d-flex(center, flex-start, row, 1.6rem);
+          &-item {
+            @include d-flex(center, flex-start, row, 1.6rem);
+            border-radius: 1.6rem;
+            padding: 1.4rem 1.8rem;
+            width: 21rem;
+            height: 6.6rem;
+            background-color: rgba($color: #fff, $alpha: 0.2);
+            &-icon {
+              color: rgba($color: #fff, $alpha: 0.95);
+              font-size: 2.7rem;
+            }
+            &-text {
+              @include d-flex(flex-start, center, column, _);
+              &-top {
+                @include f-style(
+                  rgba($color: #fff, $alpha: 0.9),
+                  1.2rem,
+                  500,
+                  1.4rem
+                );
+                font-family: "Visby Medium";
+                text-transform: uppercase;
+              }
+              &-bottom {
+                @include f-style(
+                  rgba($color: #fff, $alpha: 0.9),
+                  1.8rem,
+                  600,
+                  2.4rem
+                );
+                font-family: "Visby Semi Bold";
+              }
+            }
+          }
+        }
+      }
+      &-img {
+        width: 51.1rem;
+        max-height: 100%;
+        position: absolute;
+        display: inline-block;
+        object-fit: contain;
+        bottom: 0;
+        right: 0;
+      }
+    }
+    .section-proposition {
+      margin-inline: auto;
+      max-width: 126rem;
+      &-text {
+        @include f-style($primary-color, 4.4rem, 500, 5.6rem);
+        text-align: center;
+        font-family: "Visby Medium";
+        &-strong {
+          font-family: "Visby Bold";
+          font-weight: 700;
+        }
+      }
+    }
+    .section-features {
+      @include d-flex(center, flex-start, column, _);
+      margin-inline: auto;
+      max-width: 128rem;
+      margin-top: 4rem;
+      &-tab-switcher {
+        @include d-flex(center, center, row, 1rem);
+        width: 44rem;
+        height: 10rem;
+        background-color: $secondary-color;
+        border-radius: 2rem;
+        padding: 1.4rem;
+        &-btn {
+          @include f-style($primart-text-color, 2rem, 600, 2.8rem);
+          @include d-flex(center, center, _, _);
+          font-family: "Visby Demi Bold";
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          border-radius: 1.2rem;
+        }
+        .click-btn {
+          background-color: $click-color;
+          color: $secondary-color;
+        }
+      }
+      &-showcase {
+        @include d-flex(flex-end, center, row, _);
+        position: relative;
+        margin-top: 4rem;
+        border-radius: 3.2rem;
+        width: 100%;
+        height: 63.3rem;
+        background-color: #fff;
+        &-img {
+          width: 39.7rem;
+          object-fit: contain;
+        }
+        &-area {
+          .section-features-showcase-message {
+            @include f-style(#1b1b1b, 2rem, 500, 3.2rem);
+            font-family: "Visby Medium";
+            padding: 1.2rem 2.8rem;
+            background-color: #e9ecfc;
+            border-radius: 4rem;
+            position: absolute;
+            &:nth-child(1) {
+              top: 8.4rem;
+              left: 16.4rem;
+            }
+            &:nth-child(2) {
+              bottom: 26rem;
+              left: 6.7rem;
+            }
+            &:nth-child(3) {
+              top: 6.8rem;
+              right: 30.3rem;
+            }
+            &:nth-child(4) {
+              top: 23.1rem;
+              right: 11.8rem;
+            }
+            &:nth-child(5) {
+              bottom: 10.4rem;
+              right: 6.7rem;
+            }
+          }
+        }
+      }
+    }
+    .section-faq {
+      width: 100%;
+      margin-top: 5rem;
+
+      &-top {
+        @include d-flex(center, space-between, row, 1rem);
+        margin-bottom: 3.7rem;
+        width: 100%;
+        max-width: 118rem;
+        margin-inline: auto;
+        &-title {
+          @include f-style(#3a3a3a, 4rem, 600, 5.6rem);
+          font-family: "Visby Demi Bold";
+        }
+        &-buttons {
+          @include d-flex(center, flex-end, row, 3.6rem);
+          &-item {
+            font-size: 4rem;
+            transition: all 0.7s;
+            color: #b2b2b2;
+            &:hover {
+              color: #344187;
+            }
+          }
+        }
+      }
+
+      &-bottom {
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 4.9rem;
+        &-item {
+          @include d-flex(flex-start, space-between, column, _);
+          height: 62.5rem;
+          border-radius: 2.8rem;
+          opacity: 0.6;
+          padding: 4rem;
+          background-color: #fff;
+          transition: transform 0.7s ease, opacity 0.7s ease;
+          flex: 0 0 calc((100% - 2 * 4.9rem) / 3);
+          width: calc((100% - 2 * 4.9rem) / 3);
+          &.active {
+            opacity: 1;
+          }
+
+          &-message {
+            @include d-flex(flex-start, flex-start, column, 2.4rem);
+            &-customer,
+            &-user {
+              font-family: "Visby Demi Bold";
+              font-weight: 600;
+              line-height: 2.4rem;
+              font-size: 1.8rem;
+              padding: 2rem 4.4rem;
+            }
+
+            &-customer {
+              color: #000;
+              background-color: #f0f0f0;
+              border-radius: 13rem 13rem 13rem 0.8rem;
+              align-self: flex-start;
+            }
+
+            &-user {
+              color: #fff;
+              background-color: #344187;
+              align-self: flex-end;
+              border-radius: 13rem 13rem 0.4rem 13rem;
+            }
+          }
+
+          &-tags {
+            @include f-style(#848aac, 2rem, 600, 3.2rem);
+            font-family: "Visby Semi Bold";
+            display: flex;
+            gap: 1.8rem;
+          }
+        }
+      }
+    }
+
+    .section-hero {
+      @include d-flex(flex-start, space-between, column, _);
+      max-width: 118rem;
+      height: 44.4rem;
+      background-color: $banner-bg-color;
+      margin-inline: auto;
+      border-radius: 4.4rem;
+      margin-top: 32.1rem;
+      position: relative;
+      padding: 6.8rem;
+      &-content {
+        display: inline-block;
+        &-text {
+          @include f-style(#fff, 5.2rem, 500, 7.2rem);
+          font-family: "Visby Medium";
+          &-strong {
+            font-weight: 700;
+            font-family: "Visby Bold";
+          }
+        }
+      }
+      &-buttons {
+        @include d-flex(center, flex-start, row, 1.6rem);
+        &-item {
+          @include d-flex(center, flex-start, row, 1.6rem);
+          border-radius: 1.6rem;
+          padding: 1.4rem 1.8rem;
+          width: 21rem;
+          height: 6.6rem;
+          background-color: rgba($color: #fff, $alpha: 0.2);
+          &-icon {
+            color: rgba($color: #fff, $alpha: 0.95);
+            font-size: 2.7rem;
+          }
+          &-text {
+            @include d-flex(flex-start, center, column, _);
+            &-top {
+              @include f-style(
+                rgba($color: #fff, $alpha: 0.9),
+                1.2rem,
+                500,
+                1.4rem
+              );
+              font-family: "Visby Medium";
+              text-transform: uppercase;
+            }
+            &-bottom {
+              @include f-style(
+                rgba($color: #fff, $alpha: 0.9),
+                1.8rem,
+                600,
+                2.4rem
+              );
+              font-family: "Visby Semi Bold";
+            }
+          }
+        }
+      }
+      &-img {
+        position: absolute;
+        bottom: 0;
+        right: 9.9rem;
+        width: 40.7rem;
+        height: 58.6rem;
+        object-fit: contain;
+      }
+    }
+  }
+  .footer {
+    @include d-flex(center, flex-start, column, _);
+    margin-top: 26rem;
+    max-width: 118rem;
+    margin-inline: auto;
+    padding-bottom: 7.6rem;
+    position: relative;
+    &-top {
+      @include d-flex(center, space-between, row, _);
+      width: 100%;
+      margin-bottom: 2.8rem;
+      padding-bottom: 2.8rem;
+      border-bottom: 1px solid #e6e8f2;
+      &-logo {
+        @include d-flex(center, center, row, _);
+        height: 3.6rem;
+        &-text {
+          font-size: 2.6rem;
+          font-family: "Visby Bold";
+          margin-right: 0.8rem;
+        }
+        &-img {
+          width: 3.6rem;
+          height: 3.6rem;
+        }
+      }
+      &-smm {
+        @include d-flex(center, center, row, 1.6rem);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        &-link {
+          @include d-flex(center, center, row, _);
+          width: 4rem;
+          height: 4rem;
+          background-color: #e6e8f2;
+          border-radius: 50%;
+          &-icon {
+            font-size: 2rem;
+            color: black;
+          }
+        }
+      }
+      &-store {
+        @include d-flex(center, center, row, 1.6rem);
+        &-btn {
+          @include d-flex(center, center, row, 0.9rem);
+          padding: 1.6rem 1.8rem;
+          border-radius: 1.2rem;
+          border: 1px solid #e6e8f2;
+          &-icon {
+            font-size: 2.7rem;
+            color: #393939f2;
+          }
+          &-text {
+            @include f-style(#393939e5, 1.6rem, 600, 2.4rem);
+            font-family: "Visby Demi Bold";
+          }
+        }
+      }
+    }
+    &-bottom {
+      @include d-flex(center, space-between, row, _);
+      width: 100%;
+      &-copyright {
+        @include f-style(#161616, 1.6rem, 500, 2rem);
+        font-family: "Visby Medium";
+      }
+      &-contact {
+        @include f-style(#161616, 1.6rem, 500, 2rem);
+        font-family: "Visby Medium";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &-links {
+        @include d-flex(center, center, row, 0.4rem);
+        &-item {
+          @include f-style(#161616, 1.6rem, 500, 2rem);
+          font-family: "Visby Medium";
+        }
+        &-separator {
+          @include d-flex(center, center, _, _);
+          color: #2b2c2e;
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  html {
+    font-size: 8px;
+  }
+  .container {
+    .main {
+      .section-banner {
+        width: 90%;
+        padding: 0;
+        max-height: 50rem;
+        @include d-flex(center, center, _, _);
+        &-content {
+          margin: auto;
+          align-items: center;
+          justify-content: center;
+        }
+        &-img {
+          display: none;
+        }
+      }
+      .section-features {
+        &-showcase {
+          &-img {
+            width: 35rem;
+          }
+          &-message {
+            &:nth-child(3) {
+              right: 20rem;
+            }
+          }
+        }
+      }
+
+      .section-faq {
+        &-top {
+          padding-inline: 2rem;
+        }
+      }
+
+      .section-hero {
+        &-img {
+          right: 7rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 6px;
+  }
+  .container {
+    .main {
+      .section-tabs {
+        width: 90%;
+        &-nav {
+          width: 100%;
+          &-list {
+            width: 100%;
+            justify-content: space-evenly;
+            &-item {
+              padding: 1.6rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+
+      .section-banner {
+        width: 90%;
+        padding: 0;
+        max-height: 50rem;
+        @include d-flex(center, center, _, _);
+
+        &-content {
+          margin: auto;
+          align-items: center;
+          justify-content: center;
+        }
+        &-img {
+          position: static;
+          display: none;
+        }
+      }
+
+      .section-features {
+        margin-inline: auto;
+        &-showcase {
+          width: 80%;
+          align-items: center;
+          &-img {
+            display: none;
+          }
+          &-area {
+            gap: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .section-features-showcase-message {
+              position: static;
+              transition: all 1s ease-in-out;
+            }
+          }
+        }
+      }
+
+      .section-faq {
+        &-top {
+          padding-inline: 2rem;
+        }
+        &-bottom {
+          padding: 1rem;
+          gap: 4.9rem;
+          width: 100%;
+          padding-inline: 1rem;
+          .section-faq-bottom-item {
+            width: 100%;
+            flex: 0 0 calc(100%);
+            opacity: 1;
+          }
+        }
+      }
+
+      .section-hero {
+        width: 90%;
+        margin-inline: auto;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        &-img {
+          display: none;
+        }
+      }
+    }
+
+    .footer {
+      padding-bottom: 3rem;
+      margin-top: 13rem;
+      position: static;
+      &-top {
+        flex-direction: column;
+        justify-content: center;
+        gap: 4rem;
+        gap: 2rem;
+        &-smm {
+          position: static;
+          transform: translateX(0);
+        }
+      }
+      &-bottom {
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+        &-contact {
+          position: static;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}

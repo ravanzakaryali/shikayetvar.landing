@@ -1,0 +1,806 @@
+@font-face {
+  font-family: "Visby Regular";
+  src: url("../fonts/VisbyRegular.woff");
+}
+@font-face {
+  font-family: "Visby Demi Bold";
+  src: url("../fonts/VisbyDemiBold.woff");
+}
+@font-face {
+  font-family: "Visby Bold";
+  src: url("../fonts/VisbyBold.woff");
+}
+@font-face {
+  font-family: "Visby Light";
+  src: url("../fonts/VisbyLight.woff");
+}
+@font-face {
+  font-family: "Visby Medium";
+  src: url("../fonts/VisbyMedium.woff");
+}
+@font-face {
+  font-family: "Visby Semi Bold";
+  src: url("../fonts/VisbySemibold.woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+  overflow: hidden;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Visby Regular";
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  background-color: #F7F7FB;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+}
+.container .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0;
+  padding-block: 2.8rem;
+  width: 100%;
+}
+.container .header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.6rem;
+  font-size: 2.6rem;
+  font-family: "Visby Bold";
+}
+.container .header-logo-img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.container .main .section-tabs {
+  width: 71rem;
+  height: 6.4rem;
+  border: 1px solid #ececec;
+  transition: all 0.7s ease-in;
+  position: fixed;
+  z-index: 3;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+  border-radius: 5.4rem;
+}
+.container .main .section-tabs-nav {
+  width: 100%;
+  height: 100%;
+}
+.container .main .section-tabs-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: _;
+  width: 100%;
+  height: 100%;
+}
+.container .main .section-tabs-nav-list-item {
+  padding: 1.6rem 4.4rem;
+  border-left: 1px solid #ececec;
+}
+.container .main .section-tabs-nav-list-item-link {
+  color: #6c6c6c;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  font-family: "Visby Demi Bold";
+}
+.container .main .section-tabs-nav-list-item-link:hover {
+  color: #0b0b0b;
+}
+.container .main .section-tabs-nav-list-item:first-child {
+  border-left: none;
+}
+.container .main .section-banner {
+  max-width: 118rem;
+  margin-inline: auto;
+  background-color: #344187;
+  border-radius: 2.8rem;
+  max-height: 80vh;
+  height: 60rem;
+  margin-bottom: 10.5rem;
+  padding-top: 12.6rem;
+  padding-left: 8rem;
+  position: relative;
+}
+.container .main .section-banner-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 2.8rem;
+  width: 45.4rem;
+}
+.container .main .section-banner-content-title {
+  color: #fff;
+  font-size: 4.4rem;
+  font-weight: 500;
+  line-height: 5.6rem;
+}
+.container .main .section-banner-content-title-strong {
+  font-family: "Visby Bold";
+  font-weight: 700;
+}
+.container .main .section-banner-content-title-span {
+  font-family: "Visby Medium";
+  font-weight: 500;
+}
+.container .main .section-banner-content-text {
+  color: #f8f8f8;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  font-family: "Visby Medium";
+}
+.container .main .section-banner-content-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 1.6rem;
+}
+.container .main .section-banner-content-buttons-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 1.6rem;
+  border-radius: 1.6rem;
+  padding: 1.4rem 1.8rem;
+  width: 21rem;
+  height: 6.6rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.container .main .section-banner-content-buttons-item-icon {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 2.7rem;
+}
+.container .main .section-banner-content-buttons-item-text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: _;
+}
+.container .main .section-banner-content-buttons-item-text-top {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  font-family: "Visby Medium";
+  text-transform: uppercase;
+}
+.container .main .section-banner-content-buttons-item-text-bottom {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  font-family: "Visby Semi Bold";
+}
+.container .main .section-banner-img {
+  width: 51.1rem;
+  max-height: 100%;
+  position: absolute;
+  display: inline-block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  bottom: 0;
+  right: 0;
+}
+.container .main .section-proposition {
+  margin-inline: auto;
+  max-width: 126rem;
+}
+.container .main .section-proposition-text {
+  color: #000;
+  font-size: 4.4rem;
+  font-weight: 500;
+  line-height: 5.6rem;
+  text-align: center;
+  font-family: "Visby Medium";
+}
+.container .main .section-proposition-text-strong {
+  font-family: "Visby Bold";
+  font-weight: 700;
+}
+.container .main .section-features {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: _;
+  margin-inline: auto;
+  max-width: 128rem;
+  margin-top: 4rem;
+}
+.container .main .section-features-tab-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+  width: 44rem;
+  height: 10rem;
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 1.4rem;
+}
+.container .main .section-features-tab-switcher-btn {
+  color: #121212;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: _;
+  gap: _;
+  font-family: "Visby Demi Bold";
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 1.2rem;
+}
+.container .main .section-features-tab-switcher .click-btn {
+  background-color: #344187;
+  color: #fff;
+}
+.container .main .section-features-showcase {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: row;
+  gap: _;
+  position: relative;
+  margin-top: 4rem;
+  border-radius: 3.2rem;
+  width: 100%;
+  height: 63.3rem;
+  background-color: #fff;
+}
+.container .main .section-features-showcase-img {
+  width: 39.7rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.container .main .section-features-showcase-area .section-features-showcase-message {
+  color: #1b1b1b;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 3.2rem;
+  font-family: "Visby Medium";
+  padding: 1.2rem 2.8rem;
+  background-color: #e9ecfc;
+  border-radius: 4rem;
+  position: absolute;
+}
+.container .main .section-features-showcase-area .section-features-showcase-message:nth-child(1) {
+  top: 8.4rem;
+  left: 16.4rem;
+}
+.container .main .section-features-showcase-area .section-features-showcase-message:nth-child(2) {
+  bottom: 26rem;
+  left: 6.7rem;
+}
+.container .main .section-features-showcase-area .section-features-showcase-message:nth-child(3) {
+  top: 6.8rem;
+  right: 30.3rem;
+}
+.container .main .section-features-showcase-area .section-features-showcase-message:nth-child(4) {
+  top: 23.1rem;
+  right: 11.8rem;
+}
+.container .main .section-features-showcase-area .section-features-showcase-message:nth-child(5) {
+  bottom: 10.4rem;
+  right: 6.7rem;
+}
+.container .main .section-faq {
+  width: 100%;
+  margin-top: 5rem;
+}
+.container .main .section-faq-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 3.7rem;
+  width: 100%;
+  max-width: 118rem;
+  margin-inline: auto;
+}
+.container .main .section-faq-top-title {
+  color: #3a3a3a;
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 5.6rem;
+  font-family: "Visby Demi Bold";
+}
+.container .main .section-faq-top-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 3.6rem;
+}
+.container .main .section-faq-top-buttons-item {
+  font-size: 4rem;
+  transition: all 0.7s;
+  color: #b2b2b2;
+}
+.container .main .section-faq-top-buttons-item:hover {
+  color: #344187;
+}
+.container .main .section-faq-bottom {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 4.9rem;
+}
+.container .main .section-faq-bottom-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: _;
+  height: 62.5rem;
+  border-radius: 2.8rem;
+  opacity: 0.6;
+  padding: 4rem;
+  background-color: #fff;
+  transition: transform 0.7s ease, opacity 0.7s ease;
+  flex: 0 0 calc((100% - 9.8rem) / 3);
+  width: calc((100% - 9.8rem) / 3);
+}
+.container .main .section-faq-bottom-item.active {
+  opacity: 1;
+}
+.container .main .section-faq-bottom-item-message {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.container .main .section-faq-bottom-item-message-customer, .container .main .section-faq-bottom-item-message-user {
+  font-family: "Visby Demi Bold";
+  font-weight: 600;
+  line-height: 2.4rem;
+  font-size: 1.8rem;
+  padding: 2rem 4.4rem;
+}
+.container .main .section-faq-bottom-item-message-customer {
+  color: #000;
+  background-color: #f0f0f0;
+  border-radius: 13rem 13rem 13rem 0.8rem;
+  align-self: flex-start;
+}
+.container .main .section-faq-bottom-item-message-user {
+  color: #fff;
+  background-color: #344187;
+  align-self: flex-end;
+  border-radius: 13rem 13rem 0.4rem 13rem;
+}
+.container .main .section-faq-bottom-item-tags {
+  color: #848aac;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  font-family: "Visby Semi Bold";
+  display: flex;
+  gap: 1.8rem;
+}
+.container .main .section-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: _;
+  max-width: 118rem;
+  height: 44.4rem;
+  background-color: #344187;
+  margin-inline: auto;
+  border-radius: 4.4rem;
+  margin-top: 32.1rem;
+  position: relative;
+  padding: 6.8rem;
+}
+.container .main .section-hero-content {
+  display: inline-block;
+}
+.container .main .section-hero-content-text {
+  color: #fff;
+  font-size: 5.2rem;
+  font-weight: 500;
+  line-height: 7.2rem;
+  font-family: "Visby Medium";
+}
+.container .main .section-hero-content-text-strong {
+  font-weight: 700;
+  font-family: "Visby Bold";
+}
+.container .main .section-hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 1.6rem;
+}
+.container .main .section-hero-buttons-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 1.6rem;
+  border-radius: 1.6rem;
+  padding: 1.4rem 1.8rem;
+  width: 21rem;
+  height: 6.6rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.container .main .section-hero-buttons-item-icon {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 2.7rem;
+}
+.container .main .section-hero-buttons-item-text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: _;
+}
+.container .main .section-hero-buttons-item-text-top {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  font-family: "Visby Medium";
+  text-transform: uppercase;
+}
+.container .main .section-hero-buttons-item-text-bottom {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  font-family: "Visby Semi Bold";
+}
+.container .main .section-hero-img {
+  position: absolute;
+  bottom: 0;
+  right: 9.9rem;
+  width: 40.7rem;
+  height: 58.6rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.container .footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: _;
+  margin-top: 26rem;
+  max-width: 118rem;
+  margin-inline: auto;
+  padding-bottom: 7.6rem;
+  position: relative;
+}
+.container .footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: _;
+  width: 100%;
+  margin-bottom: 2.8rem;
+  padding-bottom: 2.8rem;
+  border-bottom: 1px solid #e6e8f2;
+}
+.container .footer-top-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: _;
+  height: 3.6rem;
+}
+.container .footer-top-logo-text {
+  font-size: 2.6rem;
+  font-family: "Visby Bold";
+  margin-right: 0.8rem;
+}
+.container .footer-top-logo-img {
+  width: 3.6rem;
+  height: 3.6rem;
+}
+.container .footer-top-smm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.6rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.container .footer-top-smm-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: _;
+  width: 4rem;
+  height: 4rem;
+  background-color: #e6e8f2;
+  border-radius: 50%;
+}
+.container .footer-top-smm-link-icon {
+  font-size: 2rem;
+  color: black;
+}
+.container .footer-top-store {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.6rem;
+}
+.container .footer-top-store-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.9rem;
+  padding: 1.6rem 1.8rem;
+  border-radius: 1.2rem;
+  border: 1px solid #e6e8f2;
+}
+.container .footer-top-store-btn-icon {
+  font-size: 2.7rem;
+  color: rgba(57, 57, 57, 0.9490196078);
+}
+.container .footer-top-store-btn-text {
+  color: rgba(57, 57, 57, 0.8980392157);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  font-family: "Visby Demi Bold";
+}
+.container .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: _;
+  width: 100%;
+}
+.container .footer-bottom-copyright {
+  color: #161616;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2rem;
+  font-family: "Visby Medium";
+}
+.container .footer-bottom-contact {
+  color: #161616;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2rem;
+  font-family: "Visby Medium";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.container .footer-bottom-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.4rem;
+}
+.container .footer-bottom-links-item {
+  color: #161616;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2rem;
+  font-family: "Visby Medium";
+}
+.container .footer-bottom-links-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: _;
+  gap: _;
+  color: #2b2c2e;
+  width: 2rem;
+  height: 2rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  html {
+    font-size: 8px;
+  }
+  .container .main .section-banner {
+    width: 90%;
+    padding: 0;
+    max-height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: _;
+    gap: _;
+  }
+  .container .main .section-banner-content {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .main .section-banner-img {
+    display: none;
+  }
+  .container .main .section-features-showcase-img {
+    width: 35rem;
+  }
+  .container .main .section-features-showcase-message:nth-child(3) {
+    right: 20rem;
+  }
+  .container .main .section-faq-top {
+    padding-inline: 2rem;
+  }
+  .container .main .section-hero-img {
+    right: 7rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 6px;
+  }
+  .container .main .section-tabs {
+    width: 90%;
+  }
+  .container .main .section-tabs-nav {
+    width: 100%;
+  }
+  .container .main .section-tabs-nav-list {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .container .main .section-tabs-nav-list-item {
+    padding: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .main .section-banner {
+    width: 90%;
+    padding: 0;
+    max-height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: _;
+    gap: _;
+  }
+  .container .main .section-banner-content {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .main .section-banner-img {
+    position: static;
+    display: none;
+  }
+  .container .main .section-features {
+    margin-inline: auto;
+  }
+  .container .main .section-features-showcase {
+    width: 80%;
+    align-items: center;
+  }
+  .container .main .section-features-showcase-img {
+    display: none;
+  }
+  .container .main .section-features-showcase-area {
+    gap: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .container .main .section-features-showcase-area .section-features-showcase-message {
+    position: static;
+    transition: all 1s ease-in-out;
+  }
+  .container .main .section-faq-top {
+    padding-inline: 2rem;
+  }
+  .container .main .section-faq-bottom {
+    padding: 1rem;
+    gap: 4.9rem;
+    width: 100%;
+    padding-inline: 1rem;
+  }
+  .container .main .section-faq-bottom .section-faq-bottom-item {
+    width: 100%;
+    flex: 0 0 100%;
+    opacity: 1;
+  }
+  .container .main .section-hero {
+    width: 90%;
+    margin-inline: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .container .main .section-hero-img {
+    display: none;
+  }
+  .container .footer {
+    padding-bottom: 3rem;
+    margin-top: 13rem;
+    position: static;
+  }
+  .container .footer-top {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    gap: 2rem;
+  }
+  .container .footer-top-smm {
+    position: static;
+    transform: translateX(0);
+  }
+  .container .footer-bottom {
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .container .footer-bottom-contact {
+    position: static;
+    transform: translateX(0);
+  }
+}/*# sourceMappingURL=style.css.map */
