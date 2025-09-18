@@ -6,53 +6,63 @@ let interval;
 let messageArray = [
   [
     {
-      role: "customer",
-      text: "1 It’s a brand new AI-powered fan donation and engagement tool that can boost your earnings like never before.",
+      role: "user",
+      text: "Platforma pulsuzdurmu?",
     },
     {
       role: "customer",
-      text: "Yes, NeoWave is 100% free to use. We only take a small cut to cover operational expenses and our processing costs.",
+      text: "Bəli, tamamilə pulsuz. Qeydiyyat et, şikayət yaz, izlə.",
     },
-    { role: "user", text: "Is it free?" },
   ],
   [
-    {
-      role: "customer",
-      text: "2 It’s a brand new AI-powered fan donation and engagement tool that can boost your earnings like never before.",
-    },
-    {
-      role: "customer",
-      text: "Yes, NeoWave is 100% free to use. We only take a small cut to cover operational expenses and our processing costs.",
-    },
-    { role: "user", text: "Is it free?" },
-  ],
-  [
-    {
-      role: "customer",
-      text: "3 It’s a brand new AI-powered fan donation and engagement tool that can boost your earnings like never before.",
-    },
     {
       role: "user",
-      text: "Yes, NeoWave is 100% free to use. We only take a small cut to cover operational expenses and our processing costs.",
+      text: "Şirkətlər cavab verirmi?",
+    },
+    {
+      role: "customer",
+      text: "Hal-hazırda bunun üçün işlər görülür şirkətlərlə əlaqə saxlanılır.",
     },
   ],
   [
     {
-      role: "customer",
-      text: " 4It’s a brand new AI-powered fan donation and engagement tool that can boost your earnings like never before.",
+      role: "user",
+      text: "Məlumatlarım təhlükəsizdirmi?",
     },
-    { role: "user", text: "lorem ipsum,hj nedfgt?" },
-    { role: "customer", text: "yes" },
-    { role: "user", text: "great" },
+    {
+      role: "customer",
+      text: "Sadəcə ad və soyad görünür. Digər məlumatlar gizli saxlanılır",
+    },
   ],
   [
     {
-      role: "customer",
-      text: "5 It’s a brand new AI-powered fan donation and engagement tool that can boost your earnings like never before.",
+      role: "user",
+      text: "Hansı şirkətlərə şikayət yaza bilərəm?",
     },
-    { role: "user", text: "lorem ipsum,hj nedfgt?" },
-    { role: "customer", text: "yes" },
-    { role: "user", text: "great" },
+    {
+      role: "customer",
+      text: "Bütün böyük şirkətlər və xidmət provayderləri daxildir.",
+    },
+  ],
+  [
+    {
+      role: "user",
+      text: "Şikayətimi silə bilərəm?",
+    },
+    {
+      role: "customer",
+      text: "Bəli, istədiyiniz vaxt şikayətinizi silə bilərsiniz.",
+    },
+  ],
+  [
+    {
+      role: "user",
+      text: "Hardan yaza bilərəm?",
+    },
+    {
+      role: "customer",
+      text: "Mobil tətbiqdən yaza bilərsiniz. iOS və Android üçün tətbiq mövcuddur.",
+    },
   ],
 ];
 
@@ -174,25 +184,25 @@ function handleInterval() {
     interval = setInterval(() => {
       handleCorusel();
       nextClass();
-    }, 2000);
+    }, 5000);
   }
 }
 //---------------------------------------------------------
 
 let showCase = document.querySelector(".section-features-showcase-area");
-let usersData = [
-  "Event Creation 🎉",
-  "Content Management 🪄",
-  "Feedback and Surveys 💭",
-  "Event Analytics 👀",
-  "Ticketing 🎫",
-];
 let partnersData = [
-  "Rəvan Creation 🎉",
-  "Rəvan Management 🪄",
-  "Rəvan and Surveys 💭",
-  "Rəvan Analytics 👀",
-  "Rəvan 🎫",
+  "Şikayət yaz ✍️",
+  "Səs topla 🗳️", 
+  "Status izlə 🔄",
+  "Cavab al 💬",
+  "Qiymətləndir ⭐",
+];
+let usersData = [
+  "Panel idarə et 🗂️",
+  "Sürətli həll ⚡",
+  "Şablon cavablar 📝",
+  "Analitika 📊",
+  "Komanda idarəsi 🔐",
 ];
 
 const tabSwitcherBtn = document.querySelectorAll(
