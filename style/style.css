@@ -87,6 +87,45 @@ button {
   width: 3.2rem;
   height: 3.2rem;
 }
+.container .main .section-tabs {
+  height: 6.4rem;
+  border: 1px solid #ececec;
+  z-index: 3;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+  border-radius: 5.4rem;
+}
+.container .main .section-tabs-nav {
+  width: 100%;
+  height: 100%;
+}
+.container .main .section-tabs-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: _;
+  width: 100%;
+  height: 100%;
+}
+.container .main .section-tabs-nav-list-item {
+  padding: 1.6rem 4.4rem;
+  border-left: 1px solid #ececec;
+}
+.container .main .section-tabs-nav-list-item-link {
+  color: #6c6c6c;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  font-family: "Visby Demi Bold";
+}
+.container .main .section-tabs-nav-list-item-link:hover {
+  color: #0b0b0b;
+}
+.container .main .section-tabs-nav-list-item:first-child {
+  border-left: none;
+}
 .container .main .section-banner {
   max-width: 118rem;
   margin-inline: auto;
@@ -495,14 +534,7 @@ button {
   padding-bottom: 2.8rem;
   border-bottom: 1px solid #e6e8f2;
 }
-.container .footer-top-left {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-.container .footer-top-left-logo {
+.container .footer-top-logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -510,23 +542,26 @@ button {
   gap: _;
   height: 3.6rem;
 }
-.container .footer-top-left-logo-text {
+.container .footer-top-logo-text {
   font-size: 2.6rem;
   font-family: "Visby Bold";
   margin-right: 0.8rem;
 }
-.container .footer-top-left-logo-img {
+.container .footer-top-logo-img {
   width: 3.6rem;
   height: 3.6rem;
 }
-.container .footer-top-left-smm {
+.container .footer-top-smm {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   gap: 1.6rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.container .footer-top-left-smm-link {
+.container .footer-top-smm-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -537,55 +572,16 @@ button {
   background-color: #e6e8f2;
   border-radius: 50%;
 }
-.container .footer-top-left-smm-link-icon {
+.container .footer-top-smm-link-icon {
   font-size: 2rem;
   color: black;
-}
-.container .footer-top .section-tabs {
-  height: 6.4rem;
-  border: 1px solid #ececec;
-  z-index: 3;
-  background-color: rgba(255, 255, 255, 0.6);
-  -webkit-backdrop-filter: blur(24px);
-          backdrop-filter: blur(24px);
-  border-radius: 5.4rem;
-}
-.container .footer-top .section-tabs-nav {
-  width: 100%;
-  height: 100%;
-}
-.container .footer-top .section-tabs-nav-list {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  gap: _;
-  width: 100%;
-  height: 100%;
-}
-.container .footer-top .section-tabs-nav-list-item {
-  padding: 1.6rem 4.4rem;
-  border-left: 1px solid #ececec;
-}
-.container .footer-top .section-tabs-nav-list-item-link {
-  color: #6c6c6c;
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 3.2rem;
-  font-family: "Visby Demi Bold";
-}
-.container .footer-top .section-tabs-nav-list-item-link:hover {
-  color: #0b0b0b;
-}
-.container .footer-top .section-tabs-nav-list-item:first-child {
-  border-left: none;
 }
 .container .footer-top-store {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 0.6rem;
+  flex-direction: row;
+  gap: 1.6rem;
 }
 .container .footer-top-store-btn {
   display: flex;
@@ -593,8 +589,7 @@ button {
   justify-content: flex-start;
   flex-direction: row;
   gap: 0.9rem;
-  padding: 1.2rem 1.4rem;
-  width: 16.4rem;
+  padding: 1.6rem 1.8rem;
   border-radius: 1.2rem;
   border: 1px solid #e6e8f2;
 }

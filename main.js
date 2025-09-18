@@ -248,13 +248,8 @@ window.addEventListener("scroll", () => {
   const windowHeight = window.innerHeight;
 
   if (footerTop <= windowHeight) {
-    // footer ekrana girib
-    sectionTabs.style.position = "static";
-    sectionTabs.style.bottom = "auto";
-    sectionTabs.style.left = "auto";
-    sectionTabs.style.transform = "none";
+    sectionTabs.style.bottom = "3%";
   } else {
-    // normal vəziyyət
     sectionTabs.style.position = "fixed";
     sectionTabs.style.bottom = "5%";
     sectionTabs.style.left = "50%";
