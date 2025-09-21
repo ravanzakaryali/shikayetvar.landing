@@ -667,3 +667,317 @@ button {
     }
   }
 }
+// Privacy Page Keyframe Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(52, 65, 135, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(52, 65, 135, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(52, 65, 135, 0);
+  }
+}
+
+// Privacy Page Styles
+.section-privacy {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  &-content {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 60px 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.6s ease-out;
+    transition: box-shadow 0.3s ease;
+    
+    &:hover {
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  &-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #344187;
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 1.2;
+    font-family: "Visby Bold";
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    
+    @media (max-width: 768px) {
+      font-size: 2.6rem;
+      margin-bottom: 40px;
+    }
+  }
+  
+  &-section {
+    margin-bottom: 40px;
+    animation: fadeInLeft 0.6s ease-out both;
+    
+    &:nth-child(even) {
+      animation: slideInRight 0.6s ease-out both;
+    }
+    
+    &-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #344187;
+      margin-bottom: 20px;
+      border-left: 4px solid #344187;
+      padding-left: 15px;
+      font-family: "Visby Demi Bold";
+      transition: all 0.3s ease;
+      position: relative;
+      
+      &:hover {
+        transform: translateX(5px);
+        color: #3d4a9a;
+        border-left-color: #3d4a9a;
+      }
+      
+      &::before {
+        content: '';
+        position: absolute;
+        left: -4px;
+        top: 0;
+        width: 4px;
+        height: 0;
+        background: #3d4a9a;
+        transition: height 0.3s ease;
+      }
+      
+      &:hover::before {
+        height: 100%;
+      }
+    }
+    
+    &-text {
+      font-size: 1.6rem;
+      line-height: 1.7;
+      color: #121212;
+      margin-bottom: 15px;
+      font-family: "Visby Regular";
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: #000;
+      }
+      
+      strong {
+        color: #344187;
+        font-weight: 600;
+        font-family: "Visby Demi Bold";
+        transition: color 0.3s ease;
+        
+        &:hover {
+          color: #3d4a9a;
+        }
+      }
+    }
+  }
+  
+  &-subsection {
+    margin-left: 20px;
+    margin-bottom: 25px;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+    
+    &-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #121212;
+      margin-bottom: 15px;
+      padding-left: 15px;
+      border-left: 2px solid #344187;
+      font-family: "Visby Demi Bold";
+      transition: all 0.3s ease;
+      position: relative;
+      
+      &:hover {
+        transform: translateX(3px);
+        color: #344187;
+        border-left-color: #3d4a9a;
+      }
+      
+      &::before {
+        content: '';
+        position: absolute;
+        left: -2px;
+        top: 0;
+        width: 2px;
+        height: 0;
+        background: #3d4a9a;
+        transition: height 0.3s ease;
+      }
+      
+      &:hover::before {
+        height: 100%;
+      }
+    }
+  }
+  
+  &-email {
+    color: #344187;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: "Visby Demi Bold";
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #344187;
+      transition: width 0.3s ease;
+    }
+    
+    &:hover {
+      color: #3d4a9a;
+      transform: translateY(-1px);
+      
+      &::after {
+        width: 100%;
+        background: #3d4a9a;
+      }
+    }
+  }
+  
+  &-back {
+    margin-top: 50px;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+    
+    &-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #344187, #2a3470);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.6rem;
+      font-family: "Visby Demi Bold";
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.6s ease;
+      }
+      
+      &:hover {
+        box-shadow: 0 15px 35px rgba(52, 65, 135, 0.4);
+        background: linear-gradient(135deg, #3d4a9a, #344187);
+        
+        &::before {
+          left: 100%;
+        }
+        
+        i {
+          transform: translateX(-3px);
+        }
+      }
+      
+      &:active {
+        transition: all 0.1s ease;
+      }
+      
+      i {
+        font-size: 1.6rem;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-privacy {
+    padding: 40px 15px;
+    
+    &-content {
+      padding: 40px 25px;
+      border-radius: 15px;
+    }
+    
+    &-section {
+      margin-bottom: 30px;
+      
+      &-title {
+        font-size: 1.8rem;
+      }
+      
+      &-text {
+        font-size: 1.4rem;
+      }
+    }
+    
+    &-subsection {
+      margin-left: 15px;
+      
+      &-title {
+        font-size: 1.6rem;
+      }
+    }
+    
+    &-back {
+      &-btn {
+        font-size: 1.4rem;
+        padding: 12px 25px;
+        
+        i {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}

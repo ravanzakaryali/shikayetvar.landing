@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Postu tətbiqdə aç</title>
+  <meta name="robots" content="noindex">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="Şikayət var - Postu tətbiqdə aç">
+  <meta property="og:description" content="Şikayət var tətbiqində postu açın. Android və iOS üçün mövcuddur.">
+  <meta property="og:image" content="/images/appIcon.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:site_name" content="Şikayət var">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="">
+  <meta property="twitter:title" content="Şikayət var - Postu tətbiqdə aç">
+  <meta property="twitter:description" content="Şikayət var tətbiqində postu açın. Android və iOS üçün mövcuddur.">
+  <meta property="twitter:image" content="/images/appIcon.png">
+  
+  <!-- Additional meta tags -->
+  <meta name="description" content="Şikayət var tətbiqində postu açın. Android və iOS üçün mövcuddur.">
+  <meta name="keywords" content="şikayət var, tətbiq, android, ios, post">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; margin: 24px; }
+    .box { max-width: 560px; margin: 48px auto; text-align: center; }
+    .btns { margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    a.btn { padding: 10px 14px; border-radius: 10px; text-decoration: none; background: #f0f1f6; color: #0f1436; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Şikayət var</h1>
+    <p>Tətbiq açılır... Əgər avtomatik açılmadısa aşağıdakı düymələrdən istifadə edin.</p>
+    <div class="btns">
+      <a class="btn" id="openApp" href="#">Tətbiqdə aç</a>
+      <a class="btn" id="play" href="#">Google Play</a>
+      <a class="btn" id="appstore" href="#">App Store</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      try {
+        // Set dynamic URL meta tags
+        var currentUrl = window.location.href;
+        document.querySelector('meta[property="og:url"]').setAttribute('content', currentUrl);
+        document.querySelector('meta[property="twitter:url"]').setAttribute('content', currentUrl);
+        
+        var params = new URLSearchParams(window.location.search);
+        var id = params.get("id");
+        var title = params.get("title");
+        var company = params.get("company");
+        
+        if (!id) return;
+
+        var scheme = "shikayetvarmobile://post/" + encodeURIComponent(id);
+        var isAndroid = /android/i.test(navigator.userAgent);
+        var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+
+        var playUrl = "https://play.google.com/store/apps/details?id=com.shikayetvar";
+        var appStoreUrl = "https://apps.apple.com/app/id0000000000"; // Set your App Store ID
+
+        document.getElementById("openApp").setAttribute("href", scheme);
+        document.getElementById("play").setAttribute("href", playUrl);
+        document.getElementById("appstore").setAttribute("href", appStoreUrl);
+
+        var start = Date.now();
+        var timer = setTimeout(function () {
+          if (Date.now() - start < 1500) {
+            if (isAndroid) window.location.replace(playUrl);
+            else if (isIOS) window.location.replace(appStoreUrl);
+          }
+        }, 1200);
+
+        window.location.replace(scheme);
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>
