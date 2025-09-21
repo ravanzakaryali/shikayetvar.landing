@@ -78,12 +78,16 @@ button {
     position: relative;
     .section-tabs {
       // width: 71rem;
+      position: fixed;
+      bottom: 5%;
+      left: 50%;
+      transform: translate(-50%, 0px);
       height: 6.4rem;
       border: 1px solid #ececec;
       z-index: 3;
       background-color: rgba($color: #fff, $alpha: 0.6);
       backdrop-filter: blur(24px);
-      transition: all .1s ease-out;
+      transition: all 0.1s ease-out;
       border-radius: 5.4rem;
       &-nav {
         width: 100%;
@@ -154,22 +158,12 @@ button {
             &-text {
               @include d-flex(flex-start, center, column, _);
               &-top {
-                @include f-style(
-                  rgba($color: #fff, $alpha: 0.9),
-                  1.2rem,
-                  500,
-                  1.4rem
-                );
+                @include f-style(rgba($color: #fff, $alpha: 0.9), 1.2rem, 500, 1.4rem);
                 font-family: "Visby Medium";
                 text-transform: uppercase;
               }
               &-bottom {
-                @include f-style(
-                  rgba($color: #fff, $alpha: 0.9),
-                  1.8rem,
-                  600,
-                  2.4rem
-                );
+                @include f-style(rgba($color: #fff, $alpha: 0.9), 1.8rem, 600, 2.4rem);
                 font-family: "Visby Semi Bold";
               }
             }
@@ -311,7 +305,9 @@ button {
           opacity: 0.6;
           padding: 4rem;
           background-color: #fff;
-          transition: transform 0.7s ease, opacity 0.7s ease;
+          transition:
+            transform 0.7s ease,
+            opacity 0.7s ease;
           flex: 0 0 calc((100% - 2 * 4.9rem) / 3);
           width: calc((100% - 2 * 4.9rem) / 3);
           &.active {
@@ -391,22 +387,12 @@ button {
           &-text {
             @include d-flex(flex-start, center, column, _);
             &-top {
-              @include f-style(
-                rgba($color: #fff, $alpha: 0.9),
-                1.2rem,
-                500,
-                1.4rem
-              );
+              @include f-style(rgba($color: #fff, $alpha: 0.9), 1.2rem, 500, 1.4rem);
               font-family: "Visby Medium";
               text-transform: uppercase;
             }
             &-bottom {
-              @include f-style(
-                rgba($color: #fff, $alpha: 0.9),
-                1.8rem,
-                600,
-                2.4rem
-              );
+              @include f-style(rgba($color: #fff, $alpha: 0.9), 1.8rem, 600, 2.4rem);
               font-family: "Visby Semi Bold";
             }
           }
@@ -435,37 +421,37 @@ button {
       margin-bottom: 2.8rem;
       padding-bottom: 2.8rem;
       border-bottom: 1px solid #e6e8f2;
-        &-logo {
-          @include d-flex(center, center, row, _);
+      &-logo {
+        @include d-flex(center, center, row, _);
+        height: 3.6rem;
+        &-text {
+          font-size: 2.6rem;
+          font-family: "Visby Bold";
+          margin-right: 0.8rem;
+        }
+        &-img {
+          width: 3.6rem;
           height: 3.6rem;
-          &-text {
-            font-size: 2.6rem;
-            font-family: "Visby Bold";
-            margin-right: 0.8rem;
-          }
-          &-img {
-            width: 3.6rem;
-            height: 3.6rem;
+        }
+      }
+      &-smm {
+        @include d-flex(center, center, row, 1.6rem);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        &-link {
+          @include d-flex(center, center, row, _);
+          width: 4rem;
+          height: 4rem;
+          background-color: #e6e8f2;
+          border-radius: 50%;
+          &-icon {
+            font-size: 2rem;
+            color: black;
           }
         }
-        &-smm {
-          @include d-flex(center, center, row, 1.6rem);
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          &-link {
-            @include d-flex(center, center, row, _);
-            width: 4rem;
-            height: 4rem;
-            background-color: #e6e8f2;
-            border-radius: 50%;
-            &-icon {
-              font-size: 2rem;
-              color: black;
-            }
-          }
-        }
-      
+      }
+
       &-store {
         @include d-flex(center, center, row, 1.6rem);
         &-btn {
@@ -571,6 +557,7 @@ button {
     .main {
       .section-tabs {
         width: 90%;
+
         &-nav {
           width: 100%;
           &-list {

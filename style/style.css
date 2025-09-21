@@ -91,12 +91,15 @@ button {
   position: relative;
 }
 .container .main .section-tabs {
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0px);
   height: 6.4rem;
   border: 1px solid #ececec;
   z-index: 3;
   background-color: rgba(255, 255, 255, 0.6);
-  -webkit-backdrop-filter: blur(24px);
-          backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
   transition: all 0.1s ease-out;
   border-radius: 5.4rem;
 }
@@ -221,8 +224,7 @@ button {
   max-height: 100%;
   position: absolute;
   display: inline-block;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   bottom: 0;
   right: 0;
 }
@@ -301,8 +303,7 @@ button {
 }
 .container .main .section-features-showcase-img {
   width: 39.7rem;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .container .main .section-features-showcase-area .section-features-showcase-message {
   color: #1b1b1b;
@@ -512,8 +513,7 @@ button {
   right: 9.9rem;
   width: 40.7rem;
   height: 58.6rem;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .container .footer {
   display: flex;
@@ -801,4 +801,6 @@ button {
     position: static;
     transform: translateX(0);
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
