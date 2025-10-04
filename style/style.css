@@ -99,7 +99,8 @@ button {
   border: 1px solid #ececec;
   z-index: 3;
   background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
   transition: all 0.1s ease-out;
   border-radius: 5.4rem;
 }
@@ -224,7 +225,8 @@ button {
   max-height: 100%;
   position: absolute;
   display: inline-block;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   bottom: 0;
   right: 0;
 }
@@ -303,7 +305,8 @@ button {
 }
 .container .main .section-features-showcase-img {
   width: 39.7rem;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .container .main .section-features-showcase-area .section-features-showcase-message {
   color: #1b1b1b;
@@ -513,7 +516,8 @@ button {
   right: 9.9rem;
   width: 40.7rem;
   height: 58.6rem;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .container .footer {
   display: flex;
@@ -772,6 +776,7 @@ button {
     margin-inline: auto;
     align-items: center;
     justify-content: center;
+    margin-top: 14rem;
     gap: 3rem;
   }
   .container .main .section-hero-img {
@@ -1070,6 +1075,4 @@ button {
   .section-privacy-back-btn i {
     font-size: 1.4rem;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
