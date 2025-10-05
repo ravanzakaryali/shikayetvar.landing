@@ -1,0 +1,38 @@
+# bitbucket-pipelines.yml
+image: alpine:3.20
+
+options:
+  size: 2x
+  max-time: 60
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Deploy static HTML via rsync
+          script:
+            - apk add --no-cache openssh-client rsync
+            - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+            - ssh-keyscan -p ${HETZNER_PORT:-22} ${HETZNER_HOST} >> ~/.ssh/known_hosts
+
+            # HTML kaynak klasörün: kök ise "." yaz, yoksa "site"
+            - export HTML_DIR="."   # kökten deploy için: export HTML_DIR="."
+            - export TARGET_DIR="${REMOTE_WEB_ROOT}/current"
+
+            # Atomik kopya: önce tmp'ye rsync, sonra sunucuda mv
+            - export RELNAME="tmp-${BITBUCKET_COMMIT:0:7}"
+            - rsync -az --delete -e "ssh -p ${HETZNER_PORT:-22}" \
+                --exclude ".git" --exclude ".bitbucket" \
+                "${HTML_DIR}/" "${HETZNER_USER}@${HETZNER_HOST}:${TARGET_DIR}/${RELNAME}/"
+
+            - |
+              ssh -p "${HETZNER_PORT:-22}" "${HETZNER_USER}@${HETZNER_HOST}" bash -se <<'EOSSH'
+              set -Eeuo pipefail
+              TARGET_DIR="${TARGET_DIR:-/var/www/radiora-web/current}"
+              RELNAME="$(ls -1 ${TARGET_DIR} | grep '^tmp-' | tail -n1 || true)"
+              if [ -n "$RELNAME" ]; then
+                # tmp dizinindeki dosyaları current'a atomik taşı
+                rsync -a --delete "${TARGET_DIR}/${RELNAME}/" "${TARGET_DIR}/"
+                rm -rf "${TARGET_DIR:?}/${RELNAME}"
+              fi
+              EOSSH
